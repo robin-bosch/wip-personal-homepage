@@ -2,7 +2,6 @@
 
 
 :root {
-    --background-color: rgb(14,165,233);
     --background-gradient: linear-gradient(90deg, rgba(14,165,233,1) 0%, rgba(99,102,241,1) 100%);
     --font-color: rgb(20, 20, 20);
 }
@@ -10,84 +9,79 @@
 * {
     color:var(--font-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
+}
+
+body {
+    /* Background animation */
+    background: var(--background-gradient);
+    background: linear-gradient(-45deg, rgba(14,165,233,1), rgba(99,102,241,1), rgba(14,165,233,1));
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+}
+
+main {
+    min-height: 99vh;
+
+    padding:1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:clamp(1rem, 5vw, 3rem);
 }
 
 h1 {
-font-size: 2.5rem;
+    font-size: clamp(1.75rem, 2vw, 2.5rem);
+    margin-block:clamp(0.25rem, 2vw, 1.25rem);
 }
 
 h2 {
-font-size: 1.5rem;
-}
-
-p {
-font-size:1rem;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    margin-block:clamp(0.125rem, 1vw, 1rem);
 }
 
 
-
-main {
-width:100%;
-padding:1rem;
-min-height: 99vh;
-align-items: center;
-display: flex;
-gap:clamp(1rem, 5vw, 3rem);
-justify-content: center;
-flex-wrap: wrap;
+img {
+    width:20rem;
+    border-radius: 50%;
 }
 
 #profile-text {
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-.icon-container {
-display: flex;
-justify-content: center;
-gap:1.5rem;
-margin:1rem 0rem;
+#icon-container {
+    margin:1rem 0rem;
+
+    display: flex;
+    justify-content: center;
+    gap:1.5rem;  
 }
 
 .icon {
-display:inline-block;
-font-size:2rem;
-transition: 0.3s;
+    font-size:2rem;
+    display:inline-block;
+    transition: 0.3s;
 }
 
 .icon:hover {
-cursor: pointer;
-transition: 0.3s;
-transform: scale(1.05);
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.05);
 }
 
-img {
-width:20rem;
-border-radius: 50%;
-}
-
-body {
-width:100%;
-background: var(--background-gradient);
-}
-
-
-body {
-background: linear-gradient(-45deg, rgba(14,165,233,1), rgba(99,102,241,1), rgba(14,165,233,1));
-background-size: 400% 400%;
-animation: gradient 20s ease infinite;
-}
-
+/* Background gradient animation */
 @keyframes gradient {
-0% {
-background-position: 0% 50%;
-}
-50% {
-background-position: 100% 50%;
-}
-100% {
-background-position: 0% 50%;
-}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
