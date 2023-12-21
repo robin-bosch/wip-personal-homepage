@@ -12,6 +12,10 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     /* Background animation */
     background: var(--background-gradient);
     background: linear-gradient(-45deg, rgba(14,165,233,1), rgba(99,102,241,1), rgba(14,165,233,1));
@@ -20,8 +24,6 @@ body {
 }
 
 main {
-    min-height: 99vh;
-
     padding:1rem;
 
     display: flex;
@@ -56,7 +58,6 @@ img {
     margin:1rem 0rem;
 
     display: flex;
-    justify-content: center;
     gap:1.5rem;  
 }
 
